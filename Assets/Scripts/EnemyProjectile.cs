@@ -15,7 +15,12 @@ public class EnemyProjectile : MonoBehaviour
 
     public void OnCollisionEnter(Collision col)
     {
-        //damage player here
+        Debug.Log(col.gameObject.ToString());
+        if(col.gameObject.GetComponent<EntityData>())
+        {
+            col.gameObject.GetComponent<EntityData>().HP -= damage;
+            Debug.Log("Did " + damage);
+        }
         Destroy(gameObject);
     }
 }
