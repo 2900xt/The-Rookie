@@ -10,4 +10,5 @@ public class Exita : MonoBehaviour
         Application.Quit();   
     }
     
+
 }
