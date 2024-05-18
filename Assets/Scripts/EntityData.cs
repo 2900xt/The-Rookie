@@ -1,12 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EntityData : MonoBehaviour
 {
     public float HP;
     public float energy;
     public bool isPlayer;
+
+    public TextMeshProUGUI healthText;
+    public Slider energySlider;
 
     public float maxHP = 100f;
 
@@ -25,7 +30,13 @@ public class EntityData : MonoBehaviour
         }
 
         //Give the player a bit of energy
-        energy = Mathf.Min(1.0f, energy + Time.deltaTime * 0.25f);
+        energy = Mathf.Min(1.0f, energy + Time.deltaTime * 0.035f);
+
+        if(isPlayer)
+        {
+            healthText.text = "" + Mathf.Round(HP);
+            energySlider.value = energy;
+        }
     }
 
     private void OnTriggerEnter(Collider other)

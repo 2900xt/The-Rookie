@@ -8,6 +8,8 @@ public class ShootingGun : MonoBehaviour
     private LineRenderer lr;
     public Transform gunTip, camera, player;
 
+    public SoundManager sm;
+
     public EntityData owner;
 
     public float shootCooldown = 1.0f, curCooldown;
@@ -27,6 +29,8 @@ public class ShootingGun : MonoBehaviour
         {
             return;
         }
+
+        sm.Play("BlasterShot");
 
         shootingPos = hit.point;
 

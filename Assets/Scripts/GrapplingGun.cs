@@ -11,7 +11,11 @@ public class GrapplingGun : MonoBehaviour
     public Transform gunTip, camera, player;
     public float maxDistance = 1600f;
 
+    public SoundManager sm;
+
     private SpringJoint joint;
+    public EntityData owner;
+
     void Awake()
     {
         lr = GetComponent<LineRenderer>();
@@ -19,6 +23,9 @@ public class GrapplingGun : MonoBehaviour
 
     void StartGrapple()
     {
+        if (owner.energy <= 0.10f) return;
+        owner.energy -= 0.10f;
+
         RaycastHit hit;
         Debug.DrawRay(camera.position, camera.forward * maxDistance, Color.red);
         if (!Physics.Raycast(camera.position, camera.forward, out hit, maxDistance, grappleAble))
@@ -26,7 +33,7 @@ public class GrapplingGun : MonoBehaviour
             return;
         }
 
-        Debug.Log("Grappling..");
+        sm.Play("GrappleShot");
 
         grapplePoint = hit.point;
         joint = player.gameObject.AddComponent<SpringJoint>();
@@ -54,6 +61,7 @@ public class GrapplingGun : MonoBehaviour
 
     void StopGrapple()
     {
+        if(joint) sm.Play("GrappleRetract");
         lr.positionCount = 0;
         Destroy(joint);
     }

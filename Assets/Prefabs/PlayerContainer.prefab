@@ -8896,7 +8896,6 @@ GameObject:
   - component: {fileID: 6737952471571739477}
   - component: {fileID: 1058223649366682874}
   - component: {fileID: 2595224924159344031}
-  - component: {fileID: 8510180632492950263}
   m_Layer: 10
   m_Name: GrapplePoint
   m_TagString: Untagged
@@ -9040,24 +9039,6 @@ MonoBehaviour:
   camera: {fileID: 8536925122821775034}
   player: {fileID: 1772731249797949671}
   maxDistance: 1600
---- !u!114 &8510180632492950263
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3269573250452090476}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2442d401ad3fd0f4fae9e89d3e161522, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gunTip: {fileID: 6737952471571739477}
-  camera: {fileID: 8536925122821775034}
-  player: {fileID: 1772731249797949671}
-  owner: {fileID: 0}
-  shootCooldown: 0.4
-  curCooldown: 0
 --- !u!1 &3341403408721895920
 GameObject:
   m_ObjectHideFlags: 0
