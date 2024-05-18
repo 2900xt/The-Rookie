@@ -27,4 +27,15 @@ public class EntityData : MonoBehaviour
         //Give the player a bit of energy
         energy = Mathf.Min(1.0f, energy + Time.deltaTime * 0.25f);
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.GetComponent<EnemyProjectile>() != null)
+        {
+            if (isPlayer) HP -= 5;
+            else HP -= 40;
+        }
+
+        Destroy(other.gameObject);
+    }
 }

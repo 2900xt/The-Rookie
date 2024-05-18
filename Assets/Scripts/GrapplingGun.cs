@@ -37,9 +37,11 @@ public class GrapplingGun : MonoBehaviour
         joint.maxDistance = dist * 0.80f;
         joint.minDistance = dist * 0.25f;
 
-        joint.spring = 4.5f;
+        joint.spring = 8.5f;
         joint.damper = 7.0f;
         joint.massScale = 4.5f;
+
+        player.gameObject.GetComponent<Rigidbody>().AddForce((grapplePoint - player.position).magnitude * (grapplePoint - player.position));
     }
 
     void DrawRope()

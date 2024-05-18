@@ -8,6 +8,8 @@ public class ShootingGun : MonoBehaviour
     private LineRenderer lr;
     public Transform gunTip, camera, player;
 
+    public EntityData owner;
+
     public float shootCooldown = 1.0f, curCooldown;
 
     // Start is called before the first frame update
@@ -19,6 +21,7 @@ public class ShootingGun : MonoBehaviour
 
     void Shoot()
     {
+        owner.energy -= 0.05f;
         RaycastHit hit;
         if(!Physics.Raycast(camera.position, camera.forward, out hit))
         {
@@ -40,7 +43,7 @@ public class ShootingGun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) && owner.energy > 0.05)
         {
             if(curCooldown <= 0)
             {
