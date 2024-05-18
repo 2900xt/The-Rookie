@@ -23,8 +23,8 @@ public class GrapplingGun : MonoBehaviour
 
     void StartGrapple()
     {
-        if (owner.energy <= 0.10f) return;
-        owner.energy -= 0.10f;
+        if (owner.energy <= 0.350f) return;
+        owner.energy -= 0.20f;
 
         RaycastHit hit;
         Debug.DrawRay(camera.position, camera.forward * maxDistance, Color.red);
@@ -69,6 +69,16 @@ public class GrapplingGun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(owner.energy <= 0.1)
+        {
+            StopGrapple();
+        }
+
+        if(joint)
+        {
+            owner.energy -= 0.075f * Time.deltaTime;
+        }
+
         DrawRope();
         if(Input.GetMouseButtonDown(1))
         {
