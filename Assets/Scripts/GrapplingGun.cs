@@ -12,8 +12,7 @@ public class GrapplingGun : MonoBehaviour
     public float maxDistance = 1600f;
 
     private SpringJoint joint;
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         lr = GetComponent<LineRenderer>();
     }
@@ -21,10 +20,13 @@ public class GrapplingGun : MonoBehaviour
     void StartGrapple()
     {
         RaycastHit hit;
-        if (!Physics.Raycast(camera.position, camera.forward, out hit, maxDistance))
+        Debug.DrawRay(camera.position, camera.forward * maxDistance, Color.red);
+        if (!Physics.Raycast(camera.position, camera.forward, out hit, maxDistance, grappleAble))
         {
             return;
         }
+
+        Debug.Log("Grappling..");
 
         grapplePoint = hit.point;
         joint = player.gameObject.AddComponent<SpringJoint>();
@@ -40,19 +42,29 @@ public class GrapplingGun : MonoBehaviour
         joint.massScale = 4.5f;
     }
 
+    void DrawRope()
+    {
+        if (!joint) return;
+        lr.positionCount = 2;
+        lr.SetPosition(0, gunTip.position);
+        lr.SetPosition(1, grapplePoint);
+    }
+
     void StopGrapple()
     {
-
+        lr.positionCount = 0;
+        Destroy(joint);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButtonDown(0))
+        DrawRope();
+        if(Input.GetMouseButtonDown(1))
         {
             StartGrapple();
         }
-        else if(Input.GetMouseButtonUp(0))
+        else if(Input.GetMouseButtonUp(1))
         {
             StopGrapple();
         }
