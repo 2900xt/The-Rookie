@@ -20,7 +20,7 @@ public class Hackable : MonoBehaviour
     {
         if (!isHacked) return;
 
-        if((-transform.position + endVector).magnitude < speed)
+        if((-transform.position + endVector).magnitude < 0.1f)
         {
             particles.SetActive(false);
             return;

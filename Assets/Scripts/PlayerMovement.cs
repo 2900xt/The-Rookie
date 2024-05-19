@@ -1,12 +1,15 @@
 // Some stupid rigidbody based movement by Dani
 
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
 
     public Transform playerCam;
     public Transform orientation;
+
+    public bool frozen = false;
     
     private Rigidbody rb;
 
@@ -50,10 +53,19 @@ public class PlayerMovement : MonoBehaviour {
 
     
     private void FixedUpdate() {
+        if(frozen)
+        {
+            return;
+        }
         Movement();
     }
 
-    private void Update() {
+    private void Update()
+    {
+        if (frozen)
+        {
+            return;
+        }
         MyInput();
         Look();
     }

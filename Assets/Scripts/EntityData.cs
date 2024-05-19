@@ -41,12 +41,11 @@ public class EntityData : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.GetComponent<EnemyProjectile>() != null)
+        if (other.gameObject.GetComponent<EnemyProjectile>() != null)
         {
             if (isPlayer) HP -= 5;
             else HP -= 40;
+            Destroy(other.gameObject);
         }
-
-        Destroy(other.gameObject);
     }
 }

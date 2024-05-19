@@ -47,6 +47,7 @@ public class ShootingGun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (owner.GetComponent<PlayerMovement>().frozen) return;
         if (Input.GetMouseButton(0) && owner.energy > 0.05)
         {
             if(curCooldown <= 0)

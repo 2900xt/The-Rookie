@@ -14,7 +14,7 @@ public class OrganizeMinigame : MonoBehaviour
 
     public Transform topLeft;
 
-    void Start()
+    public void Start()
     {
         currentlyOn = 0;
         order = new int[9];

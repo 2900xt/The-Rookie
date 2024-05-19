@@ -69,6 +69,8 @@ public class GrapplingGun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (owner.GetComponent<PlayerMovement>().frozen) return;
+
         if(owner.energy <= 0.1)
         {
             StopGrapple();

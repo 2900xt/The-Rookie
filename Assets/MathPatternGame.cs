@@ -18,16 +18,13 @@ public class MathPatternGame : MonoBehaviour
 
     public Color col;
 
-    private void Start()
-    {
-        InitGame();
-    }
-
     public void InitGame()
     {
         ansGrid = new int[9];
         curGrid = new int[9];
         clicked = new bool[9];
+        solved = false;
+        modelBoardText.text = "";
 
         for(int i = 0; i < 9; i++)
         {
@@ -102,7 +99,6 @@ public class MathPatternGame : MonoBehaviour
 
     public void OnClick(int ind)
     {
-        Debug.Log("niga" + ind);
         clicked[ind] = true;
         buttonGrid[ind].transform.parent.GetComponent<Image>().color = Color.gray;
 
