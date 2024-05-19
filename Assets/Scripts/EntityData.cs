@@ -25,7 +25,9 @@ public class EntityData : MonoBehaviour
     {
         if (HP <= 0)
         {
-            Destroy(gameObject);
+
+            if(isPlayer) GameObject.Find("GameManager").GetComponent<RespawnManager>().Respawn();
+            else Destroy(gameObject);
             return;
         }
 
@@ -43,9 +45,14 @@ public class EntityData : MonoBehaviour
     {
         if (other.gameObject.GetComponent<EnemyProjectile>() != null)
         {
-            if (isPlayer) HP -= 5;
+            if (isPlayer) HP -= 25;
             else HP -= 40;
             Destroy(other.gameObject);
+        }
+
+        if(other.gameObject.CompareTag("Checkpoint"))
+        {
+            if (isPlayer) GameObject.Find("GameManager").GetComponent<RespawnManager>().respawnPoint = other.transform;
         }
     }
 }

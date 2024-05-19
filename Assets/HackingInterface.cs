@@ -6,7 +6,7 @@ public class HackingInterface : MonoBehaviour
 {
     public GameObject hackTooltip;
     public GameObject allOnGame, matchGame, organizeGame;
-    public Hackable toHack;
+    public ObjectToHack toHack;
 
     public int activeHack;
 
@@ -15,7 +15,7 @@ public class HackingInterface : MonoBehaviour
         if (other.gameObject.CompareTag("Hack"))
         {
             hackTooltip.SetActive(true);
-            toHack = other.GetComponent<ObjectToHack>().toHack;
+            toHack = other.GetComponent<ObjectToHack>();
         }
     }
 
@@ -56,7 +56,7 @@ public class HackingInterface : MonoBehaviour
 
             if(activeHack == -1)
             {
-                toHack.isHacked = true;
+                toHack.HackAll();
                 toHack = null;
                 Cursor.visible = false;
                 Cursor.lockState = CursorLockMode.Locked;

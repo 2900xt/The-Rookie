@@ -4,5 +4,13 @@ using UnityEngine;
 
 public class ObjectToHack : MonoBehaviour
 {
-    public Hackable toHack;
+    public List<Hackable> toHackList;
+
+    public void HackAll()
+    {
+        foreach(Hackable h in toHackList)
+        {
+            h.isHacked = true;
+        }
+    }
 }
