@@ -19,6 +19,7 @@ public class MeleeBot : MonoBehaviour
     bool alrdyAttacked;
     public Transform shootPoint;
     public GameObject projectile;
+    public GameObject destroyEffect;
 
     //states
     public float sightRange, attackRange;
@@ -106,6 +107,7 @@ public class MeleeBot : MonoBehaviour
 
     public void Dead()
     {
+        Instantiate(destroyEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 
