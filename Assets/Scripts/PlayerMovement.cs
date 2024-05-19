@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour {
     private float sensMultiplier = 1f;
     
     public float moveSpeed = 4500;
-    public float maxSpeed = 20;
+    public float maxSpeed = 10;
     public bool grounded;
     public LayerMask whatIsGround;
     
@@ -33,7 +33,7 @@ public class PlayerMovement : MonoBehaviour {
 
     private bool readyToJump = true;
     private float jumpCooldown = 0.25f;
-    public float jumpForce = 550f;
+    public float jumpForce = 9000f;
     
     float x, y;
     bool jumping, sprinting, crouching;
@@ -57,6 +57,7 @@ public class PlayerMovement : MonoBehaviour {
         {
             return;
         }
+
         Movement();
     }
 
@@ -130,8 +131,10 @@ public class PlayerMovement : MonoBehaviour {
         if (grounded && crouching) multiplierV = 0f;
 
         //Apply forces to move player
-        rb.AddForce(orientation.transform.forward * y * moveSpeed * Time.deltaTime * multiplier * multiplierV);
-        rb.AddForce(orientation.transform.right * x * moveSpeed * Time.deltaTime * multiplier);
+        //rb.AddForce(orientation.transform.forward * y * moveSpeed * Time.deltaTime * multiplier * multiplierV);
+        //rb.AddForce(orientation.transform.right * x * moveSpeed * Time.deltaTime * multiplier);
+
+        rb.velocity = (orientation.transform.forward * y * 35 * multiplier) + (orientation.transform.right * x * 35 * multiplier) + new Vector3(0, rb.velocity.y, 0);
     }
 
     private void Jump() {
