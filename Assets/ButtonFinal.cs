@@ -23,7 +23,7 @@ public class ButtonFinal : MonoBehaviour
     {
         if (myTextelement.text.Equals(code))
         {
-            SceneManager.LoadScene("EndGame");
+            SceneManager.LoadScene("End Screen");
             return;
         }
     }

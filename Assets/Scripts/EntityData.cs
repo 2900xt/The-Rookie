@@ -12,7 +12,6 @@ public class EntityData : MonoBehaviour
 
     public TextMeshProUGUI healthText;
     public Slider energySlider;
-
     public GameObject endgameButtons;
 
     public float maxHP = 100f;
@@ -31,12 +30,16 @@ public class EntityData : MonoBehaviour
             {
                 GameObject.Find("GameManager").GetComponent<RespawnManager>().Respawn();
             }
-            else Destroy(gameObject);
+            else
+            {
+                GameObject.Find("GameManager").GetComponent<SoundManager>().Play("RobotDeath");
+                Destroy(gameObject);
+            }
             return;
         }
 
         //Give the player a bit of energy
-        energy = Mathf.Min(1.0f, energy + Time.deltaTime * 0.1f);
+        energy = Mathf.Min(1.0f, energy + Time.deltaTime * 0.05f);
 
         if(isPlayer)
         {
@@ -78,17 +81,8 @@ public class EntityData : MonoBehaviour
         {
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
+            GetComponent<PlayerMovement>().frozen = true;
             endgameButtons.SetActive(true);
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if(isPlayer && other.gameObject.CompareTag("Finish"))
-        {
-            Cursor.visible = false;
-            Cursor.lockState = CursorLockMode.Locked;
-            endgameButtons.SetActive(false);
         }
     }
 }

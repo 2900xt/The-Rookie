@@ -56,6 +56,7 @@ public class HackingInterface : MonoBehaviour
 
             if(activeHack == -1)
             {
+                GameObject.Find("GameManager").GetComponent<SoundManager>() .Play("AfterHack");
                 toHack.HackAll();
                 toHack = null;
                 Cursor.visible = false;
@@ -93,6 +94,7 @@ public class HackingInterface : MonoBehaviour
 
                 activeHack = type;
 
+                GameObject.Find("GameManager").GetComponent<SoundManager>().Play("BeforeHack");
                 Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.None;
                 GameObject.Find("Player").GetComponent<PlayerMovement>().frozen = true;
