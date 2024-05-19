@@ -37,9 +37,11 @@ public class Clicker : MonoBehaviour
         gameComplete();
     }
 
+    public bool solved;
+
     private void gameComplete()
     {
-        Debug.Log("Hip Hooray");
+        solved = true;
         return;
     }
     
