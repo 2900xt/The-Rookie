@@ -17,7 +17,7 @@ public class MathPatternGame : MonoBehaviour
     char[] symbols = { 'A', 'B'};
 
     public Color col;
-
+    
     public void InitGame()
     {
         ansGrid = new int[9];
@@ -100,7 +100,7 @@ public class MathPatternGame : MonoBehaviour
     public void OnClick(int ind)
     {
         clicked[ind] = true;
-        buttonGrid[ind].transform.parent.GetComponent<Image>().color = Color.gray;
+        buttonGrid[ind].transform.parent.GetComponent<Image>().color = Color.white;
 
         List<int> list = new List<int>();
         for (int i = 0; i < 9; i++)

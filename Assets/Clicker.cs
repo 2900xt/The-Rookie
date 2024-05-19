@@ -8,6 +8,10 @@ public class Clicker : MonoBehaviour
     [SerializeField] private bool[] lightOn = new bool[9];
     [SerializeField] private GameObject[] objects = new GameObject[9];
 
+    public Color startcol, oncol;
+
+    void Start(){Init();}
+
     public void Init()
     {
         for(int i = 0; i < 9; i++)
@@ -19,11 +23,11 @@ public class Clicker : MonoBehaviour
             
             if (lightOn[button - 1] == true)
             {
-                objects[button - 1].GetComponent<Image>().color = Color.blue;
+                objects[button - 1].GetComponent<Image>().color = oncol;
             }
             else
             {
-                objects[button - 1].GetComponent<Image>().color = Color.white;
+                objects[button - 1].GetComponent<Image>().color = startcol;
             }
         }
     }
@@ -33,11 +37,11 @@ public class Clicker : MonoBehaviour
         lightOn[button - 1] = !lightOn[button - 1];
         if (lightOn[button -1] == true)
         {
-            objects[button - 1].GetComponent<Image>().color = Color.blue;
+            objects[button - 1].GetComponent<Image>().color = oncol;
         }
         else
         {
-            objects[button - 1].GetComponent<Image>().color = Color.white;
+            objects[button - 1].GetComponent<Image>().color = startcol;
         }
         
 
