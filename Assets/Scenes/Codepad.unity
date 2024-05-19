@@ -2429,16 +2429,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d0f54a49fc2d754b9f61738621beb45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttons:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  myTextelement: {fileID: 1603865364}
 --- !u!1 &1839781149
 GameObject:
   m_ObjectHideFlags: 0
