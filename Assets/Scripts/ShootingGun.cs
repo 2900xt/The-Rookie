@@ -22,13 +22,14 @@ public class ShootingGun : MonoBehaviour
     }
 
     void Shoot()
-    {
-        owner.energy -= 0.05f;
+    {;
         RaycastHit hit;
         if(!Physics.Raycast(camera.position, camera.forward, out hit))
         {
             return;
         }
+
+        owner.energy -= 0.05f;
 
         sm.Play("BlasterShot");
 
