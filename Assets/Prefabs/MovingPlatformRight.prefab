@@ -246,6 +246,7 @@ GameObject:
   - component: {fileID: 7082851386535007796}
   - component: {fileID: 7047471765936876720}
   - component: {fileID: 6705572840619633563}
+  - component: {fileID: 2228950833729516943}
   m_Layer: 0
   m_Name: ww
   m_TagString: Untagged
@@ -339,6 +340,27 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &2228950833729516943
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4147834179289891440}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 0.9999999, z: 0.9999999}
+  m_Center: {x: -0.0000009536743, y: 0, z: 0}
 --- !u!1 &5091115597333540718
 GameObject:
   m_ObjectHideFlags: 0
@@ -554,6 +576,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endPos: {fileID: 6936877994281969842}
+  endVector: {x: 0, y: 0, z: 0}
   speed: 5
   particles: {fileID: 2328593166270065468}
   isHacked: 0
