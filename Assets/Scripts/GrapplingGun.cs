@@ -23,15 +23,15 @@ public class GrapplingGun : MonoBehaviour
 
     void StartGrapple()
     {
-        if (owner.energy <= 0.350f) return;
-        owner.energy -= 0.20f;
-
         RaycastHit hit;
         Debug.DrawRay(camera.position, camera.forward * maxDistance, Color.red);
         if (!Physics.Raycast(camera.position, camera.forward, out hit, maxDistance, grappleAble))
         {
             return;
         }
+
+        if (owner.energy <= 0.350f) return;
+        owner.energy -= 0.20f;
 
         sm.Play("GrappleShot");
 
