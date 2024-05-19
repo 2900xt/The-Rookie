@@ -51,7 +51,7 @@ GameObject:
   - component: {fileID: 4035047959894253726}
   - component: {fileID: 9157614044686908414}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1186,7 +1186,7 @@ GameObject:
   - component: {fileID: 3763383585829597635}
   - component: {fileID: 6682970099395369652}
   m_Layer: 5
-  m_Name: Button (8)
+  m_Name: 8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1319,7 +1319,7 @@ GameObject:
   - component: {fileID: 2242634653464551357}
   - component: {fileID: 423553913117787022}
   m_Layer: 5
-  m_Name: Button (6)
+  m_Name: 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1452,7 +1452,7 @@ GameObject:
   - component: {fileID: 4751358414129708129}
   - component: {fileID: 589759789370979639}
   m_Layer: 5
-  m_Name: Button (4)
+  m_Name: 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1822,7 +1822,7 @@ GameObject:
   - component: {fileID: 8030387846190292617}
   - component: {fileID: 7667237957065435659}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2030,7 +2030,7 @@ GameObject:
   - component: {fileID: 6430290757103428701}
   - component: {fileID: 1923811779919630151}
   m_Layer: 5
-  m_Name: Button (7)
+  m_Name: 7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2589,7 +2589,7 @@ GameObject:
   - component: {fileID: 4983060831205579121}
   - component: {fileID: 3832976242510320892}
   m_Layer: 5
-  m_Name: Button (3)
+  m_Name: 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2722,7 +2722,7 @@ GameObject:
   - component: {fileID: 8786660704943811665}
   - component: {fileID: 885424863235228542}
   m_Layer: 5
-  m_Name: Button (9)
+  m_Name: 9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2855,7 +2855,7 @@ GameObject:
   - component: {fileID: 5528092300939365913}
   - component: {fileID: 2100672771210325929}
   m_Layer: 5
-  m_Name: Button (5)
+  m_Name: 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -41,6 +41,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 462752508644694491}
+  - component: {fileID: 8359496956548091934}
   m_Layer: 0
   m_Name: Mesh (1)
   m_TagString: Untagged
@@ -66,6 +67,27 @@ Transform:
   - {fileID: 3887749910169966713}
   m_Father: {fileID: 734142251174768465}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &8359496956548091934
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1019563242086755299}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9f0b2832894922141a18de3abd46665e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1543750550443609679
 GameObject:
   m_ObjectHideFlags: 0
@@ -252,9 +274,10 @@ MonoBehaviour:
   playerMask:
     serializedVersion: 2
     m_Bits: 1024
-  health: 100
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 0
+  anim: {fileID: 8359496956548091934}
+  data: {fileID: 8227493340293441586}
   timeBtwnAttacks: 2
   shootPoint: {fileID: 1275681313925205720}
   projectile: {fileID: 2984154210793414879, guid: 14b3329bebca21741b0ce95a6b0f207a,

@@ -8,11 +8,12 @@ public class MeleeBot : MonoBehaviour
     public NavMeshAgent agent;
     public Transform player;
     public LayerMask ground, playerMask;
-    public float health;
     //patrolling
     public Vector3 walkPoint;
     bool walkSet;
     public float walkPointRange;
+    public Animator anim;
+    public EntityData data;
 
     //attacking
     public float timeBtwnAttacks;
@@ -45,6 +46,11 @@ public class MeleeBot : MonoBehaviour
         if(!playerInSightRange && !playerInAttackRange) Patroling();
         if(playerInSightRange && !playerInAttackRange) ChasePlayer();
         if(playerInSightRange && playerInAttackRange) Attack();
+
+        if(data.HP <= 0)
+        {
+            Dead();
+        }
     }
 
     private void Patroling()
@@ -84,6 +90,7 @@ public class MeleeBot : MonoBehaviour
 
         if(!alrdyAttacked)
         {
+            anim.SetTrigger("Shoot");
             Instantiate(projectile, shootPoint.position, shootPoint.rotation);
 
             alrdyAttacked = true;
@@ -94,15 +101,6 @@ public class MeleeBot : MonoBehaviour
     private void ResetAttack()
     {
         alrdyAttacked = false;
-    }
-
-    public void TakeDamage(int damage)
-    {
-        health -= damage;
-        if(health <= 0)
-        {
-            Dead();
-        }
     }
 
     public void Dead()
