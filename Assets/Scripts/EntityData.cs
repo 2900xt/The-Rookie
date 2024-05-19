@@ -13,6 +13,8 @@ public class EntityData : MonoBehaviour
     public TextMeshProUGUI healthText;
     public Slider energySlider;
 
+    public GameObject endgameButtons;
+
     public float maxHP = 100f;
 
     void Start()
@@ -34,7 +36,7 @@ public class EntityData : MonoBehaviour
         }
 
         //Give the player a bit of energy
-        energy = Mathf.Min(1.0f, energy + Time.deltaTime * 0.035f);
+        energy = Mathf.Min(1.0f, energy + Time.deltaTime * 0.1f);
 
         if(isPlayer)
         {
@@ -70,6 +72,23 @@ public class EntityData : MonoBehaviour
         if(isPlayer && other.GetComponent<LevelSwitcher>() != null)
         {
             other.gameObject.GetComponent<LevelSwitcher>().ready = true;
+        }
+
+        if (isPlayer && other.gameObject.CompareTag("Finish"))
+        {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+            endgameButtons.SetActive(true);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if(isPlayer && other.gameObject.CompareTag("Finish"))
+        {
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+            endgameButtons.SetActive(false);
         }
     }
 }

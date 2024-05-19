@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class ButtonFinal : MonoBehaviour
 {
@@ -22,6 +23,7 @@ public class ButtonFinal : MonoBehaviour
     {
         if (myTextelement.text.Equals(code))
         {
+            SceneManager.LoadScene("EndGame");
             return;
         }
     }
