@@ -29,6 +29,11 @@ public class ShootingGun : MonoBehaviour
             return;
         }
 
+        if(owner.gameObject.Equals(hit.collider.gameObject))
+        {
+            return;
+        }
+
         owner.energy -= 0.05f;
 
         sm.Play("BlasterShot");

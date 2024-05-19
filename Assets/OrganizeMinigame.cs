@@ -14,7 +14,12 @@ public class OrganizeMinigame : MonoBehaviour
 
     public Transform topLeft;
 
-    public void Start()
+    private void Start()
+    {
+        Init();
+    }
+
+    public void Init()
     {
         solved = false;
         currentlyOn = 0;
@@ -22,6 +27,7 @@ public class OrganizeMinigame : MonoBehaviour
         List<int> list = new List<int>();
         for(int i = 0; i < 9; i++)
         {
+            buttons[i].SetActive(true);
             list.Add(i + 1);
         }
         
@@ -42,7 +48,7 @@ public class OrganizeMinigame : MonoBehaviour
         if (order[pressed - 1] - 1 == currentlyOn)
         {
             currentlyOn++;
-            Destroy(buttons[pressed - 1]);
+            buttons[pressed - 1].SetActive(false);
             sm.Play("ClickSFX");
         }
 

@@ -30,8 +30,8 @@ public class GrapplingGun : MonoBehaviour
             return;
         }
 
-        if (owner.energy <= 0.350f) return;
-        owner.energy -= 0.20f;
+        if (owner.energy <= 0.20f) return;
+        owner.energy -= 0.15f;
 
         sm.Play("GrappleShot");
 
@@ -48,7 +48,7 @@ public class GrapplingGun : MonoBehaviour
         joint.damper = 7.0f;
         joint.massScale = 4.5f;
 
-        player.gameObject.GetComponent<Rigidbody>().AddForce((grapplePoint - player.position).magnitude * (grapplePoint - player.position) * 3);
+        player.gameObject.GetComponent<Rigidbody>().AddForce((grapplePoint - player.position).magnitude * (grapplePoint - player.position) * 9);
     }
 
     void DrawRope()

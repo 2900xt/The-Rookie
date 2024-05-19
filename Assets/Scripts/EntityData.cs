@@ -17,7 +17,7 @@ public class EntityData : MonoBehaviour
 
     void Start()
     {
-        HP =  maxHP;
+        HP = maxHP;
         energy = 1.0f;
     }
 
@@ -25,8 +25,10 @@ public class EntityData : MonoBehaviour
     {
         if (HP <= 0)
         {
-
-            if(isPlayer) GameObject.Find("GameManager").GetComponent<RespawnManager>().Respawn();
+            if (isPlayer)
+            {
+                GameObject.Find("GameManager").GetComponent<RespawnManager>().Respawn();
+            }
             else Destroy(gameObject);
             return;
         }
@@ -58,6 +60,16 @@ public class EntityData : MonoBehaviour
         if(other.gameObject.CompareTag("Laser"))
         {
             HP = -1;
+        }
+
+        if(isPlayer && other.GetComponent<AudioSource>() != null)
+        {
+            other.GetComponent<AudioSource>().Play();
+        }
+
+        if(isPlayer && other.GetComponent<LevelSwitcher>() != null)
+        {
+            other.gameObject.GetComponent<LevelSwitcher>().ready = true;
         }
     }
 }

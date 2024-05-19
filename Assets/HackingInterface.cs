@@ -82,7 +82,7 @@ public class HackingInterface : MonoBehaviour
                         break;
                     case 1:
                         organizeGame.SetActive(true);
-                        organizeGame.GetComponent<OrganizeMinigame>().Start();
+                        organizeGame.GetComponent<OrganizeMinigame>().Init();
                         break;
                     case 2:
                         matchGame.SetActive(true);

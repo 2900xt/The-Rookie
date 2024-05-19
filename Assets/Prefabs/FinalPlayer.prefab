@@ -5634,6 +5634,16 @@ MonoBehaviour:
     volume: 1
     pitch: 0
     source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: 6062b3315c90e4d4f8969173233a1673, type: 3}
+    name: Taunt1
+    volume: 1
+    pitch: 0
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: c43c7d939fe7fa74a88f9b8e1fa1fad9, type: 3}
+    name: Taunt2
+    volume: 1
+    pitch: 0
+    source: {fileID: 0}
 --- !u!114 &6468140936024363971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15913,7 +15923,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1881582391470640801}
   m_Father: {fileID: 4882407563885540658}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &7332024286494260989
@@ -16336,9 +16347,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4288963386634302201}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.9848078, z: -0.17364816, w: 0}
-  m_LocalPosition: {x: 1.37, y: -0.79, z: 2.617}
-  m_LocalScale: {x: 0.15147, y: 0.15147, z: 0.15147}
+  m_LocalRotation: {x: -0, y: 0.9848078, z: -0.17364816, w: 0}
+  m_LocalPosition: {x: 1.3681285, y: -0.78759646, z: 2.6211808}
+  m_LocalScale: {x: 0.15146999, y: 0.15146999, z: 0.15147}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4420371377727260821}
@@ -16347,7 +16358,7 @@ Transform:
   - {fileID: 1498922702071250657}
   - {fileID: 4099854005128260644}
   - {fileID: 5970560109844993122}
-  m_Father: {fileID: 4882407563885540658}
+  m_Father: {fileID: 4132402111795278435}
   m_LocalEulerAnglesHint: {x: 20, y: 180, z: 0}
 --- !u!1 &4309303197393665978
 GameObject:
@@ -26693,7 +26704,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4132402111795278435}
-  - {fileID: 1881582391470640801}
   m_Father: {fileID: 241601232594177454}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4522169468033007556
