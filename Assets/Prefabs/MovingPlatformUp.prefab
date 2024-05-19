@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 7651884184280976145}
   - component: {fileID: 1418863276195823398}
   - component: {fileID: 3999821517970328152}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ww (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -471,6 +471,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endPos: {fileID: 637573030756138672}
+  endVector: {x: 0, y: 0, z: 0}
   speed: 5
   particles: {fileID: 5958620944658225347}
   isHacked: 0

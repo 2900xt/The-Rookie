@@ -33743,7 +33743,7 @@ MonoBehaviour:
   maxSlopeAngle: 35
   slideForce: 400
   slideCounterMovement: 0.2
-  jumpForce: 550
+  jumpForce: 2200
 --- !u!65 &8541975474604367967
 BoxCollider:
   m_ObjectHideFlags: 0

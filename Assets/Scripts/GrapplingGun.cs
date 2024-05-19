@@ -23,15 +23,15 @@ public class GrapplingGun : MonoBehaviour
 
     void StartGrapple()
     {
-        if (owner.energy <= 0.350f) return;
-        owner.energy -= 0.20f;
-
         RaycastHit hit;
         Debug.DrawRay(camera.position, camera.forward * maxDistance, Color.red);
         if (!Physics.Raycast(camera.position, camera.forward, out hit, maxDistance, grappleAble))
         {
             return;
         }
+
+        if (owner.energy <= 0.350f) return;
+        owner.energy -= 0.20f;
 
         sm.Play("GrappleShot");
 
@@ -48,7 +48,7 @@ public class GrapplingGun : MonoBehaviour
         joint.damper = 7.0f;
         joint.massScale = 4.5f;
 
-        player.gameObject.GetComponent<Rigidbody>().AddForce((grapplePoint - player.position).magnitude * (grapplePoint - player.position));
+        player.gameObject.GetComponent<Rigidbody>().AddForce((grapplePoint - player.position).magnitude * (grapplePoint - player.position) * 3);
     }
 
     void DrawRope()
