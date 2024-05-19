@@ -16,6 +16,7 @@ public class OrganizeMinigame : MonoBehaviour
 
     public void Start()
     {
+        solved = false;
         currentlyOn = 0;
         order = new int[9];
         List<int> list = new List<int>();
@@ -33,6 +34,7 @@ public class OrganizeMinigame : MonoBehaviour
         }
     }
 
+    public SoundManager sm;
     // Update is called once per frame
     public void Next(int pressed)
     {
@@ -41,6 +43,7 @@ public class OrganizeMinigame : MonoBehaviour
         {
             currentlyOn++;
             Destroy(buttons[pressed - 1]);
+            sm.Play("ClickSFX");
         }
 
         if(currentlyOn >= 9)
@@ -53,6 +56,5 @@ public class OrganizeMinigame : MonoBehaviour
     private void gameComplete()
     {
         solved = true;
-        return;
     }
 }

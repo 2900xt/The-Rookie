@@ -97,8 +97,11 @@ public class MathPatternGame : MonoBehaviour
         check();
     }
 
+    public SoundManager sm;
+
     public void OnClick(int ind)
     {
+        sm.Play("ClickSFX");
         clicked[ind] = true;
         buttonGrid[ind].transform.parent.GetComponent<Image>().color = Color.white;
 

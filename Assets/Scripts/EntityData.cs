@@ -54,5 +54,10 @@ public class EntityData : MonoBehaviour
         {
             if (isPlayer) GameObject.Find("GameManager").GetComponent<RespawnManager>().respawnPoint = other.transform;
         }
+
+        if(other.gameObject.CompareTag("Laser"))
+        {
+            HP = -1;
+        }
     }
 }

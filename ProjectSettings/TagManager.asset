@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Hack
   - Checkpoint
+  - Laser
   layers:
   - Default
   - TransparentFX

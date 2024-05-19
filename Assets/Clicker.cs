@@ -34,6 +34,7 @@ public class Clicker : MonoBehaviour
 
     public void toggle(int button)
     {
+        sm.Play("ClickSFX");
         lightOn[button - 1] = !lightOn[button - 1];
         if (lightOn[button -1] == true)
         {
@@ -47,6 +48,7 @@ public class Clicker : MonoBehaviour
 
     }
 
+    public SoundManager sm;
 
     public void Update()
     { 
